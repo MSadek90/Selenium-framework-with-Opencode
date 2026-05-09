@@ -44,20 +44,6 @@ Key phase dependencies:
 - page objects go in `src/main/java/automation/pageobjects/`
 - flow classes go in `src/main/java/automation/flow/`
 
-## Dependency versions (latest stable)
+## Version policy
 
-Use the latest stable versions below. Validate before upgrading via the linked official sources.
-
-| Technology | Version | Release date | Official source |
-|---|---|---|---|
-| JDK | 25 LTS | 2025-09-16 | [oracle.com](https://www.oracle.com/java/technologies/javase/25all-relnotes.html) |
-| Selenium | 4.41.0 | 2026-02-20 | [selenium.dev](https://seleniumhq.github.io/downloads) |
-| TestNG | 7.12.0 | 2026-01-22 | [central.sonatype.com](https://central.sonatype.com/artifact/org.testng/testng/7.12.0) |
-| Maven Compiler Plugin | 3.15.0 | 2026-02-01 | [maven.apache.org](https://maven.apache.org/plugins/maven-compiler-plugin/dependency-info.html) |
-| Maven Surefire | 3.5.5 | 2026-02-18 | [maven.apache.org](https://maven.apache.org/surefire/download.cgi) |
-| Owner | 1.0.12 | 2020-06-07 | [github.com/matteobaccan/owner](https://github.com/matteobaccan/owner) |
-| AssertJ | 3.27.7 | 2026-01-24 | [central.sonatype.com](https://central.sonatype.com/artifact/org.assertj/assertj-core/3.27.7) |
-| SLF4J | 2.0.17 | 2025-02-25 | [slf4j.org](https://slf4j.org/manual.html) |
-| Logback | 1.5.32 | 2026-02-16 | [logback.qos.ch](https://logback.qos.ch/setup.html) |
-| Allure TestNG | 2.33.0 | 2026-02-20 | [mvnrepository.com](https://mvnrepository.com/artifact/io.qameta.allure/allure-testng) |
-| Datafaker | 2.5.4 | 2026-02-11 | [github.com/datafaker-net/datafaker](https://github.com/datafaker-net/datafaker)
+When adding or updating any dependency or plugin, always search for the latest stable version from its official source (Maven Central, official website, or GitHub releases). Do not hardcode versions — resolve them fresh each time.
