@@ -5,7 +5,7 @@ Read and follow AGENTS.md strictly.
 Implement Phase 2 only: Page Object Model Refactor.
 
 Goal:
-Refactor the working Heroku login test into Page Object Model.
+Refactor the working login test into Page Object Model.
 
 Use:
 - Current project stack

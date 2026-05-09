@@ -1,1 +1,3 @@
 automation\Main.class
+automation\pageobjects\BasePage.class
+automation\pageobjects\LoginPage.class
