@@ -8,3 +8,6 @@ logs/
 
 # Allure results
 allure-results/
+
+# Allure CLI
+.allure/

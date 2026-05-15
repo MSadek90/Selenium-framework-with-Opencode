@@ -2,7 +2,7 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-16T00:32:46 EEST" name="UI Automation Suite" finished-at="2026-05-16T00:32:57 EEST" duration-ms="10833">
+  <suite started-at="2026-05-16T00:52:24 EEST" name="UI Automation Suite" finished-at="2026-05-16T00:52:35 EEST" duration-ms="11387">
     <groups>
       <group name="regression">
         <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@74960bfa]" name="testSuccessfulLogin" class="automation.LoginTest"/>
@@ -14,17 +14,17 @@
         <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@74960bfa]" name="testSuccessfulLogin" class="automation.LoginTest"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2026-05-16T00:32:46 EEST" name="Login Test" finished-at="2026-05-16T00:32:57 EEST" duration-ms="10833">
+    <test started-at="2026-05-16T00:52:24 EEST" name="Login Test" finished-at="2026-05-16T00:52:35 EEST" duration-ms="11387">
       <class name="automation.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:automation.LoginTest@74960bfa]" started-at="2026-05-16T00:32:46 EEST" name="setUp" finished-at="2026-05-16T00:32:48 EEST" duration-ms="1258" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:automation.LoginTest@74960bfa]" started-at="2026-05-16T00:52:24 EEST" name="setUp" finished-at="2026-05-16T00:52:26 EEST" duration-ms="1901" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testSuccessfulLogin()[pri:0, instance:automation.LoginTest@74960bfa]" started-at="2026-05-16T00:32:48 EEST" name="testSuccessfulLogin" finished-at="2026-05-16T00:32:57 EEST" duration-ms="9265" status="PASS">
+        <test-method signature="testSuccessfulLogin()[pri:0, instance:automation.LoginTest@74960bfa]" started-at="2026-05-16T00:52:26 EEST" name="testSuccessfulLogin" finished-at="2026-05-16T00:52:35 EEST" duration-ms="8948" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSuccessfulLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.LoginTest@74960bfa]" started-at="2026-05-16T00:32:57 EEST" name="tearDown" finished-at="2026-05-16T00:32:57 EEST" duration-ms="190" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.LoginTest@74960bfa]" started-at="2026-05-16T00:52:35 EEST" name="tearDown" finished-at="2026-05-16T00:52:35 EEST" duration-ms="222" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

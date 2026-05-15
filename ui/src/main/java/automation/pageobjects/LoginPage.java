@@ -1,12 +1,12 @@
 package automation.pageobjects;
 
+import static automation.util.AllureLogger.step;
+
 import automation.config.ConfigManager;
-import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-@Slf4j
 public class LoginPage extends BasePage {
 
     private final By emailInput = By.cssSelector("input[type='email']");
@@ -19,37 +19,37 @@ public class LoginPage extends BasePage {
 
     public void open() {
         String url = ConfigManager.config().baseUrl();
-        log.info("Navigating to URL: {}", url);
+        step("Navigating to URL: {}", url);
         driver.get(url);
         driver.manage().window().maximize();
     }
 
     public void enterEmail(String email) {
-        log.info("Entering email: {}", email);
+        step("Entering email: {}", email);
         wait.waitForVisible(emailInput).sendKeys(email);
     }
 
     public void enterPassword(String password) {
-        log.info("Entering password");
+        step("Entering password");
         driver.findElement(passwordInput).sendKeys(password);
     }
 
     public void clickSubmit() {
-        log.info("Clicking submit button");
+        step("Clicking submit button");
         wait.waitForClickable(submitButton).click();
     }
 
     public void login(String email, String password) {
-        log.info("Logging in with email: {}", email);
+        step("Logging in with email: {}", email);
         enterEmail(email);
         enterPassword(password);
         clickSubmit();
     }
 
     public void waitForUrlToChange() {
-        log.info("Waiting for URL to change from: {}", ConfigManager.config().baseUrl());
+        step("Waiting for URL to change from: {}", ConfigManager.config().baseUrl());
         wait.until(ExpectedConditions.not(
                 ExpectedConditions.urlToBe(ConfigManager.config().baseUrl())));
-        log.info("URL changed successfully");
+        step("URL changed successfully");
     }
 }

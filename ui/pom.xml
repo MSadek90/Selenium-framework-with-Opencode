@@ -19,6 +19,7 @@
         <logback.version>1.5.32</logback.version>
         <lombok.version>1.18.44</lombok.version>
         <allure.version>2.33.0</allure.version>
+        <allure.maven.version>2.18.0</allure.maven.version>
         <suite.xml>src/test/resources/testng.xml</suite.xml>
     </properties>
 
@@ -65,7 +66,6 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
             <version>${allure.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -95,6 +95,18 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite.xml}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure.maven.version}</version>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
+                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
                 </configuration>
             </plugin>
         </plugins>

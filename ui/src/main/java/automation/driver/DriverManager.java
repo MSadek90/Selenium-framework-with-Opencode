@@ -1,10 +1,10 @@
 package automation.driver;
 
+import static automation.util.AllureLogger.step;
+
 import automation.config.ConfigManager;
-import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 
-@Slf4j
 public final class DriverManager {
 
     private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
@@ -18,7 +18,7 @@ public final class DriverManager {
         WebDriver driver = DriverFactory.createDriver(browserType);
         driver.manage().window().maximize();
         driverThreadLocal.set(driver);
-        log.info("Browser started: {}", browserName);
+        step("Browser started: {}", browserName);
     }
 
     public static WebDriver getDriver() {
@@ -30,7 +30,7 @@ public final class DriverManager {
         if (driver != null) {
             driver.quit();
             driverThreadLocal.remove();
-            log.info("Browser stopped");
+            step("Browser stopped");
         }
     }
 }

@@ -2,7 +2,7 @@
 
 ## Project state
 
-Phase 3 (Owner Configuration) complete. Phase 4 (Browser Management) complete. Phase 5 (Wait Strategy) complete. Phase 6 (TestNG XML) complete. Phase 7 (Test Grouping) complete. Phase 9 (Logging) complete. Phase 10 (Allure Reporting) complete. Selenium + TestNG + Maven Surefire + Owner are configured in `pom.xml`. URL is read from `config.properties` via `ConfigManager`/`FrameworkConfig`. Browser is managed by `DriverFactory`/`DriverManager` (ThreadLocal) reading `browser` from `config.properties`. Chrome and Edge are supported. Waits are centralized in `WaitUtil` and used by `BasePage`. Tests run through `src/test/resources/testng.xml`. Tests are grouped into smoke, sanity, and regression with Maven profiles. Logging is set up with SLF4J + Logback + Lombok @Slf4j; logback.xml controls output format (console + rolling file appender to target/logs/automation.log). Allure is configured with allure-testng 2.33.0; test class uses @Epic, @Feature, @Story, @Severity, @Description annotations; allure-results are generated in target/allure-results.
+Phase 3 (Owner Configuration) complete. Phase 4 (Browser Management) complete. Phase 5 (Wait Strategy) complete. Phase 6 (TestNG XML) complete. Phase 7 (Test Grouping) complete. Phase 9 (Logging) complete. Phase 10 (Allure Reporting) complete. Selenium + TestNG + Maven Surefire + Owner are configured in `pom.xml`. URL is read from `config.properties` via `ConfigManager`/`FrameworkConfig`. Browser is managed by `DriverFactory`/`DriverManager` (ThreadLocal) reading `browser` from `config.properties`. Chrome and Edge are supported. Waits are centralized in `WaitUtil` and used by `BasePage`. Tests run through `src/test/resources/testng.xml`. Tests are grouped into smoke, sanity, and regression with Maven profiles. Logging is set up with SLF4J + Logback + Lombok @Slf4j; logback.xml controls output format (console + rolling file appender to target/logs/automation.log). Allure is configured with allure-testng 2.33.0; test class uses @Epic, @Feature, @Story, @Severity, @Description annotations; AllureLogger utility logs to both SLF4J and Allure steps via Allure.step(); allure-results are generated in target/allure-results.
 
 ## Run commands
 
@@ -11,6 +11,8 @@ mvn clean test                          # default suite (testng.xml)
 mvn clean test -P smoke                 # smoke group only
 mvn clean test -P sanity                # sanity group only
 mvn clean test -P regression            # regression group only
+mvn allure:serve                        # serve Allure report via Jetty
+mvn allure:report                       # generate Allure report to target/site/allure-maven/
 ```
 
 ## How to build
