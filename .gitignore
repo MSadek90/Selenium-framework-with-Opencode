@@ -1,4 +1,10 @@
 
-
 #Ignore vscode AI rules
 .github\instructions\codacy.instructions.md
+
+# Build artifacts
+target/
+logs/
+
+# Allure results
+allure-results/
