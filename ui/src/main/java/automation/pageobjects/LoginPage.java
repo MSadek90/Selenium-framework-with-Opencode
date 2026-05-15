@@ -1,12 +1,11 @@
 package automation.pageobjects;
 
+import automation.config.ConfigManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
-
-    private static final String URL = "https://abajora-dashboard.neop.co/ar/admin/login";
 
     private final By emailInput = By.cssSelector("input[type='email']");
     private final By passwordInput = By.cssSelector("input[type='password']");
@@ -17,13 +16,12 @@ public class LoginPage extends BasePage {
     }
 
     public void open() {
-        driver.get(URL);
+        driver.get(ConfigManager.config().baseUrl());
         driver.manage().window().maximize();
     }
 
     public void enterEmail(String email) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput))
-                .sendKeys(email);
+        wait.waitForVisible(emailInput).sendKeys(email);
     }
 
     public void enterPassword(String password) {
@@ -31,7 +29,7 @@ public class LoginPage extends BasePage {
     }
 
     public void clickSubmit() {
-        driver.findElement(submitButton).click();
+        wait.waitForClickable(submitButton).click();
     }
 
     public void login(String email, String password) {
@@ -42,6 +40,6 @@ public class LoginPage extends BasePage {
 
     public void waitForUrlToChange() {
         wait.until(ExpectedConditions.not(
-                ExpectedConditions.urlToBe(URL)));
+                ExpectedConditions.urlToBe(ConfigManager.config().baseUrl())));
     }
 }

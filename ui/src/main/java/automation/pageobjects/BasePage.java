@@ -1,17 +1,15 @@
 package automation.pageobjects;
 
+import automation.util.WaitUtil;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public abstract class BasePage {
 
     protected final WebDriver driver;
-    protected final WebDriverWait wait;
+    protected final WaitUtil wait;
 
     protected BasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WaitUtil(driver);
     }
 }

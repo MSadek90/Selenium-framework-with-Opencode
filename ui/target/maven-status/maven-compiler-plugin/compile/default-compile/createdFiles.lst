@@ -1,3 +1,10 @@
-automation\Main.class
-automation\pageobjects\BasePage.class
+automation\driver\DriverManager.class
+automation\config\ConfigManager.class
+automation\driver\DriverFactory$1.class
+automation\util\WaitUtil.class
+automation\driver\DriverFactory.class
 automation\pageobjects\LoginPage.class
+automation\driver\BrowserType.class
+automation\pageobjects\BasePage.class
+automation\config\FrameworkConfig.class
+automation\Main.class

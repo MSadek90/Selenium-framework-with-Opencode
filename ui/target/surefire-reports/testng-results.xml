@@ -2,20 +2,33 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-09T15:27:24 EEST" name="Surefire suite" finished-at="2026-05-09T15:27:45 EEST" duration-ms="20444">
+  <suite started-at="2026-05-15T16:34:48 EEST" name="UI Automation Suite" finished-at="2026-05-15T16:34:58 EEST" duration-ms="10735">
     <groups>
+      <group name="regression">
+        <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@38145825]" name="testSuccessfulLogin" class="automation.LoginTest"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@38145825]" name="testSuccessfulLogin" class="automation.LoginTest"/>
+      </group> <!-- smoke -->
+      <group name="sanity">
+        <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@38145825]" name="testSuccessfulLogin" class="automation.LoginTest"/>
+      </group> <!-- sanity -->
     </groups>
-    <test started-at="2026-05-09T15:27:24 EEST" name="Surefire test" finished-at="2026-05-09T15:27:45 EEST" duration-ms="20444">
+    <test started-at="2026-05-15T16:34:48 EEST" name="Login Test" finished-at="2026-05-15T16:34:58 EEST" duration-ms="10735">
       <class name="automation.LoginTest">
-        <test-method signature="testSuccessfulLogin()[pri:0, instance:automation.LoginTest@1ed1993a]" started-at="2026-05-09T15:27:24 EEST" name="testSuccessfulLogin" finished-at="2026-05-09T15:27:45 EEST" duration-ms="20067" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:automation.LoginTest@38145825]" started-at="2026-05-15T16:34:48 EEST" name="setUp" finished-at="2026-05-15T16:34:50 EEST" duration-ms="1720" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testSuccessfulLogin()[pri:0, instance:automation.LoginTest@38145825]" started-at="2026-05-15T16:34:50 EEST" name="testSuccessfulLogin" finished-at="2026-05-15T16:34:58 EEST" duration-ms="8790" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSuccessfulLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.LoginTest@1ed1993a]" started-at="2026-05-09T15:27:45 EEST" name="tearDown" finished-at="2026-05-09T15:27:45 EEST" duration-ms="342" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.LoginTest@38145825]" started-at="2026-05-15T16:34:58 EEST" name="tearDown" finished-at="2026-05-15T16:34:58 EEST" duration-ms="181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- automation.LoginTest -->
-    </test> <!-- Surefire test -->
-  </suite> <!-- Surefire suite -->
+    </test> <!-- Login Test -->
+  </suite> <!-- UI Automation Suite -->
 </testng-results>
