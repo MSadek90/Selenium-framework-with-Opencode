@@ -2,7 +2,7 @@
 
 ## Project state
 
-Phase 3 (Owner Configuration) complete. Phase 4 (Browser Management) complete. Phase 5 (Wait Strategy) complete. Phase 6 (TestNG XML) complete. Phase 7 (Test Grouping) complete. Phase 9 (Logging) complete. Phase 10 (Allure Reporting) complete. Selenium + TestNG + Maven Surefire + Owner are configured in `pom.xml`. URL is read from `config.properties` via `ConfigManager`/`FrameworkConfig`. Browser is managed by `DriverFactory`/`DriverManager` (ThreadLocal) reading `browser` from `config.properties`. Chrome and Edge are supported. Waits are centralized in `WaitUtil` and used by `BasePage`. Tests run through `src/test/resources/testng.xml`. Tests are grouped into smoke, sanity, and regression with Maven profiles. Logging is set up with SLF4J + Logback + Lombok @Slf4j; logback.xml controls output format (console + rolling file appender to target/logs/automation.log). Allure is configured with allure-testng 2.33.0; test class uses @Epic, @Feature, @Story, @Severity, @Description annotations; AllureLogger utility logs to both SLF4J and Allure steps via Allure.step(); allure-results are generated in target/allure-results.
+Phase 3 (Owner Configuration) complete. Phase 4 (Browser Management) complete. Phase 5 (Wait Strategy) complete. Phase 6 (TestNG XML) complete. Phase 7 (Test Grouping) complete. Phase 8 (AssertJ) complete. Phase 9 (Logging) complete. Phase 10 (Allure Reporting) complete. Phase 12 (JSON Test Data) complete. Phase 13 (DataFaker) complete. Phase 14 (Parallel Execution) complete. Selenium + TestNG + Maven Surefire + Owner are configured in `pom.xml`. URL is read from `config.properties` via `ConfigManager`/`FrameworkConfig`. Browser is managed by `DriverFactory`/`DriverManager` (ThreadLocal) reading `browser` from `config.properties`. Chrome and Edge are supported. Waits are centralized in `WaitUtil` and used by `BasePage`. Tests run through `src/test/resources/testng.xml`. Tests are grouped into smoke, sanity, and regression with Maven profiles. Logging is set up with SLF4J + Logback + Lombok @Slf4j; logback.xml controls output format (console + rolling file appender to target/logs/automation.log). Allure is configured with allure-testng 2.33.0; test class uses @Epic, @Feature, @Story, @Severity, @Description annotations; AllureLogger utility logs to both SLF4J and Allure steps via Allure.step(); allure-results are generated in target/allure-results. Parallel execution is configured via `src/test/resources/testng-parallel.xml` (`parallel="classes"`, `thread-count="2"`). WebDriver is stored in ThreadLocal (DriverManager) ensuring thread-safe browser sessions. `@BeforeMethod(alwaysRun = true)` and `@AfterMethod(alwaysRun = true)` guarantee proper setup/teardown across all profiles.
 
 ## Run commands
 
@@ -11,6 +11,7 @@ mvn clean test                          # default suite (testng.xml)
 mvn clean test -P smoke                 # smoke group only
 mvn clean test -P sanity                # sanity group only
 mvn clean test -P regression            # regression group only
+mvn clean test -P parallel              # parallel classes (thread-count=2)
 mvn allure:serve                        # serve Allure report via Jetty
 mvn allure:report                       # generate Allure report to target/site/allure-maven/
 ```
@@ -39,6 +40,17 @@ Key phase dependencies:
 - Phase 14: ThreadLocal WebDriver for parallel execution
 - Phases 15–17: application discovery, page object generation, flow generation
 - Phase 19: create `README.md`
+
+## Parallel execution rules
+
+- `parallel="classes"`: each class runs in its own thread (not methods)
+- `thread-count="2"`: max 2 concurrent browser sessions
+- WebDriver is stored in `ThreadLocal` via `DriverManager` — each thread gets its own isolated instance
+- `@BeforeMethod(alwaysRun = true)` and `@AfterMethod(alwaysRun = true)` must be used on all test classes that interact with the browser
+- `DriverManager.quitDriver()` calls `driver.quit()` + `driverThreadLocal.remove()` to clean up per-thread state
+- Do not use `parallel="methods"` unless each method within a class is fully isolated (no shared state)
+- Do not increase `thread-count` beyond available system resources
+- No static/shared `WebDriver` references anywhere
 
 ## Target application
 

@@ -1,6 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <!-- Run: mvn clean test -P sanity -->
 <suite name="Sanity Suite">
+    <listeners>
+        <listener class-name="automation.listener.TestListener"/>
+    </listeners>
     <test name="Sanity Tests">
         <groups>
             <run>

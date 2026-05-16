@@ -24,9 +24,10 @@ Scope:
 Tasks:
 1. Add Jackson dependency.
 2. Create users.json under src/test/resources.
-3. Add valid Heroku login data.
+3. Add valid login data.
 4. Create a minimal JSON reader or test data helper.
 5. Use JSON data in the login test.
+6- if you see lombok will be important in large data more than 20 filed in ome page add it 
 
 Acceptance criteria:
 - Login test reads data from JSON.

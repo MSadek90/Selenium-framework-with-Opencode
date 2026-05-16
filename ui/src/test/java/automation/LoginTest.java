@@ -1,7 +1,10 @@
 package automation;
 
 import static automation.util.AllureLogger.step;
+import static org.assertj.core.api.Assertions.assertThat;
 
+import automation.config.ConfigManager;
+import automation.data.JsonTestData;
 import automation.driver.DriverManager;
 import automation.pageobjects.LoginPage;
 import io.qameta.allure.Description;
@@ -18,7 +21,7 @@ import org.testng.annotations.Test;
 @Feature("Login")
 public class LoginTest {
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
         step("=== Test Setup: Initializing driver ===");
         DriverManager.initDriver();
@@ -33,8 +36,10 @@ public class LoginTest {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
 
         loginPage.open();
-        loginPage.login("admin@example.com", "Neop2020!");
+        loginPage.login(JsonTestData.getValidEmail(), JsonTestData.getValidPassword());
         loginPage.waitForUrlToChange();
+        assertThat(DriverManager.getDriver().getCurrentUrl())
+                .isNotEqualTo(ConfigManager.config().baseUrl());
         step("=== Test: testSuccessfulLogin - PASSED ===");
     }
 

@@ -1,11 +1,13 @@
 automation\driver\DriverManager.class
+automation\util\FakeDataUtil.class
 automation\config\ConfigManager.class
 automation\driver\DriverFactory$1.class
 automation\util\AllureLogger.class
-automation\util\WaitUtil.class
-automation\driver\DriverFactory.class
 automation\pageobjects\LoginPage.class
 automation\driver\BrowserType.class
 automation\pageobjects\BasePage.class
 automation\config\FrameworkConfig.class
 automation\Main.class
+automation\util\WaitUtil.class
+automation\driver\DriverFactory.class
+automation\util\ScreenshotUtil.class

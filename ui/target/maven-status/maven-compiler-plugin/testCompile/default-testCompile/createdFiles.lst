@@ -1,1 +1,5 @@
+automation\FakeDataDemoTest.class
+automation\listener\TestListener.class
+automation\LoginPageOpenTest.class
 automation\LoginTest.class
+automation\data\JsonTestData.class

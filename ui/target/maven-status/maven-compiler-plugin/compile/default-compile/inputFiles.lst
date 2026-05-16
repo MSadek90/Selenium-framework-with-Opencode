@@ -7,4 +7,6 @@ D:\Selenium framework with Opencode\ui\src\main\java\automation\Main.java
 D:\Selenium framework with Opencode\ui\src\main\java\automation\pageobjects\BasePage.java
 D:\Selenium framework with Opencode\ui\src\main\java\automation\pageobjects\LoginPage.java
 D:\Selenium framework with Opencode\ui\src\main\java\automation\util\AllureLogger.java
+D:\Selenium framework with Opencode\ui\src\main\java\automation\util\FakeDataUtil.java
+D:\Selenium framework with Opencode\ui\src\main\java\automation\util\ScreenshotUtil.java
 D:\Selenium framework with Opencode\ui\src\main\java\automation\util\WaitUtil.java

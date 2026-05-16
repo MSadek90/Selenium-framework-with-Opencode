@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-16T00:52:24 EEST" name="UI Automation Suite" finished-at="2026-05-16T00:52:35 EEST" duration-ms="11387">
+  <suite started-at="2026-05-16T12:00:25 EEST" name="Parallel Suite" finished-at="2026-05-16T12:00:37 EEST" duration-ms="12204">
     <groups>
       <group name="regression">
-        <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@74960bfa]" name="testSuccessfulLogin" class="automation.LoginTest"/>
+        <method signature="LoginPageOpenTest.testLoginPageOpens()[pri:0, instance:automation.LoginPageOpenTest@3700ec9c]" name="testLoginPageOpens" class="automation.LoginPageOpenTest"/>
+        <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@52066604]" name="testSuccessfulLogin" class="automation.LoginTest"/>
       </group> <!-- regression -->
       <group name="smoke">
-        <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@74960bfa]" name="testSuccessfulLogin" class="automation.LoginTest"/>
+        <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@52066604]" name="testSuccessfulLogin" class="automation.LoginTest"/>
       </group> <!-- smoke -->
       <group name="sanity">
-        <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@74960bfa]" name="testSuccessfulLogin" class="automation.LoginTest"/>
+        <method signature="LoginTest.testSuccessfulLogin()[pri:0, instance:automation.LoginTest@52066604]" name="testSuccessfulLogin" class="automation.LoginTest"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2026-05-16T00:52:24 EEST" name="Login Test" finished-at="2026-05-16T00:52:35 EEST" duration-ms="11387">
+    <test started-at="2026-05-16T12:00:25 EEST" name="Parallel Tests" finished-at="2026-05-16T12:00:37 EEST" duration-ms="12204">
       <class name="automation.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:automation.LoginTest@74960bfa]" started-at="2026-05-16T00:52:24 EEST" name="setUp" finished-at="2026-05-16T00:52:26 EEST" duration-ms="1901" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:automation.LoginTest@52066604]" started-at="2026-05-16T12:00:25 EEST" name="setUp" finished-at="2026-05-16T12:00:27 EEST" duration-ms="2246" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testSuccessfulLogin()[pri:0, instance:automation.LoginTest@74960bfa]" started-at="2026-05-16T00:52:26 EEST" name="testSuccessfulLogin" finished-at="2026-05-16T00:52:35 EEST" duration-ms="8948" status="PASS">
+        <test-method signature="testSuccessfulLogin()[pri:0, instance:automation.LoginTest@52066604]" started-at="2026-05-16T12:00:27 EEST" name="testSuccessfulLogin" finished-at="2026-05-16T12:00:37 EEST" duration-ms="9534" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSuccessfulLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.LoginTest@74960bfa]" started-at="2026-05-16T00:52:35 EEST" name="tearDown" finished-at="2026-05-16T00:52:35 EEST" duration-ms="222" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.LoginTest@52066604]" started-at="2026-05-16T12:00:37 EEST" name="tearDown" finished-at="2026-05-16T12:00:37 EEST" duration-ms="197" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- automation.LoginTest -->
-    </test> <!-- Login Test -->
-  </suite> <!-- UI Automation Suite -->
+      <class name="automation.LoginPageOpenTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:automation.LoginPageOpenTest@3700ec9c]" started-at="2026-05-16T12:00:25 EEST" name="setUp" finished-at="2026-05-16T12:00:27 EEST" duration-ms="2247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginPageOpens()[pri:0, instance:automation.LoginPageOpenTest@3700ec9c]" started-at="2026-05-16T12:00:27 EEST" name="testLoginPageOpens" finished-at="2026-05-16T12:00:30 EEST" duration-ms="2909" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginPageOpens -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:automation.LoginPageOpenTest@3700ec9c]" started-at="2026-05-16T12:00:30 EEST" name="tearDown" finished-at="2026-05-16T12:00:31 EEST" duration-ms="277" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- automation.LoginPageOpenTest -->
+    </test> <!-- Parallel Tests -->
+  </suite> <!-- Parallel Suite -->
 </testng-results>
